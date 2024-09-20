@@ -1,0 +1,154 @@
+[
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$icUsnyDeX7wW1jR7XYtEXy$P+w+HLXg+HJDu+vIaBkRwV/XnYlkB1ZVr9zexOkg/jY=",
+      "last_login": null,
+      "is_superuser": true,
+      "first_name": "admin",
+      "last_name": "admin",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-09-20T07:53:28.612Z",
+      "email": "ivklepova2307@gmail.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-20T08:03:50.472Z",
+      "email": "test1@mail.ru",
+      "phone": null,
+      "city": "Москва",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-20T08:03:50.472Z",
+      "email": "test2@mail.ru",
+      "phone": null,
+      "city": "Саратов",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-20T08:03:50.472Z",
+      "email": "test3@mail.ru",
+      "phone": null,
+      "city": "Самара",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "user": 6,
+      "payment_day": "2024-01-01",
+      "course_pay": 11,
+      "lesson_pay": null,
+      "payment_amount": 150,
+      "payment_method": "наличные"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "user": 7,
+      "payment_day": "2024-10-01",
+      "course_pay": 11,
+      "lesson_pay": 2,
+      "payment_amount": 30,
+      "payment_method": "перевод на счет"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "user": 8,
+      "payment_day": "2024-09-12",
+      "course_pay": 13,
+      "lesson_pay": 5,
+      "payment_amount": 50,
+      "payment_method": "перевод на счет"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 4,
+    "fields": {
+      "user": 6,
+      "payment_day": "2024-01-01",
+      "course_pay": 11,
+      "lesson_pay": null,
+      "payment_amount": 150,
+      "payment_method": "наличные"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 5,
+    "fields": {
+      "user": 7,
+      "payment_day": "2024-10-01",
+      "course_pay": 11,
+      "lesson_pay": 2,
+      "payment_amount": 30,
+      "payment_method": "перевод на счет"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 6,
+    "fields": {
+      "user": 8,
+      "payment_day": "2024-09-12",
+      "course_pay": 13,
+      "lesson_pay": 5,
+      "payment_amount": 50,
+      "payment_method": "перевод на счет"
+    }
+  }
+]
