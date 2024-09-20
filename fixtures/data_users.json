@@ -120,35 +120,35 @@
     "pk": 4,
     "fields": {
       "user": 6,
-      "payment_day": "2024-01-01",
-      "course_pay": 11,
+      "payment_day": "2024-05-01",
+      "course_pay": 12,
       "lesson_pay": null,
-      "payment_amount": 150,
-      "payment_method": "наличные"
+      "payment_amount": 100,
+      "payment_method": "card"
     }
   },
   {
     "model": "users.payment",
     "pk": 5,
     "fields": {
-      "user": 7,
-      "payment_day": "2024-10-01",
-      "course_pay": 11,
-      "lesson_pay": 2,
-      "payment_amount": 30,
-      "payment_method": "перевод на счет"
+      "user": 8,
+      "payment_day": "2024-03-01",
+      "course_pay": 13,
+      "lesson_pay": 5,
+      "payment_amount": 50,
+      "payment_method": "card"
     }
   },
   {
     "model": "users.payment",
     "pk": 6,
     "fields": {
-      "user": 8,
-      "payment_day": "2024-09-12",
-      "course_pay": 13,
-      "lesson_pay": 5,
-      "payment_amount": 50,
-      "payment_method": "перевод на счет"
+      "user": 6,
+      "payment_day": "2024-09-02",
+      "course_pay": 12,
+      "lesson_pay": 4,
+      "payment_amount": 30,
+      "payment_method": "cash"
     }
   }
 ]
