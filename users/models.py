@@ -1,6 +1,5 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.utils import timezone
 
 from config.settings import NULLABLE
 from lms.models import Course, Lesson
@@ -32,7 +31,7 @@ class Payment(models.Model):
         ('card', 'перевод на счет'),
     ]
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
-    payment_day = models.DateTimeField(default=timezone.now, **NULLABLE, verbose_name='Дата оплаты')
+    payment_day = models.DateField(**NULLABLE, verbose_name='Дата оплаты')
     course_pay = models.ForeignKey(Course, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Оплаченный курс')
     lesson_pay = models.ForeignKey(Lesson, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Оплаченный урок')
     payment_amount = models.PositiveIntegerField(verbose_name='Сумма оплаты')
