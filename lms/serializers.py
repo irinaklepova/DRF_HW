@@ -5,10 +5,14 @@ from lms.models import Course, Lesson
 
 class CourseSerializer(serializers.ModelSerializer):
     """Сериализатор для курсов"""
+    lessons_count = serializers.SerializerMethodField()
+
+    def get_lessons_count(self, obj):
+        return obj.lesson_set.count()
 
     class Meta:
         model = Course
-        fields = '__all__'
+        fields = ['id', 'name', 'description', 'lessons_count', ]
 
 
 class LessonSerializer(serializers.ModelSerializer):
