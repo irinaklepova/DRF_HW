@@ -15,24 +15,24 @@ class Command(BaseCommand):
                 'payment_day': '2024-01-01',
                 'course_pay': Course.objects.get(pk=11),
                 'lesson_pay': None,
-                'payment_amount': 150,
-                'payment_method': 'наличные',
+                'amount': 150,
+                'method': 'cash',
             },
             {
                 'user': User.objects.get(pk=7),
                 'payment_day': '2024-10-01',
                 'course_pay': Course.objects.get(pk=11),
                 'lesson_pay': Lesson.objects.get(pk=2),
-                'payment_amount': 30,
-                'payment_method': 'перевод на счет'
+                'amount': 30,
+                'method': 'card'
             },
             {
                 'user': User.objects.get(pk=8),
                 'payment_day': '2024-09-12',
                 'course_pay': Course.objects.get(pk=13),
                 'lesson_pay': Lesson.objects.get(pk=5),
-                'payment_amount': 50,
-                'payment_method': 'перевод на счет'
+                'amount': 50,
+                'method': 'card'
             },
         ]
         payment_for_create = []

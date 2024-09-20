@@ -87,8 +87,8 @@
       "payment_day": "2024-01-01",
       "course_pay": 11,
       "lesson_pay": null,
-      "payment_amount": 150,
-      "payment_method": "cash"
+      "amount": 150,
+      "method": "cash"
     }
   },
   {
@@ -99,8 +99,8 @@
       "payment_day": "2024-10-01",
       "course_pay": 11,
       "lesson_pay": 2,
-      "payment_amount": 30,
-      "payment_method": "card"
+      "amount": 30,
+      "method": "card"
     }
   },
   {
@@ -111,8 +111,8 @@
       "payment_day": "2024-09-12",
       "course_pay": 13,
       "lesson_pay": 5,
-      "payment_amount": 50,
-      "payment_method": "cash"
+      "amount": 50,
+      "method": "cash"
     }
   },
   {
@@ -123,8 +123,8 @@
       "payment_day": "2024-05-01",
       "course_pay": 12,
       "lesson_pay": null,
-      "payment_amount": 100,
-      "payment_method": "card"
+      "amount": 100,
+      "method": "card"
     }
   },
   {
@@ -135,8 +135,8 @@
       "payment_day": "2024-03-01",
       "course_pay": 13,
       "lesson_pay": 5,
-      "payment_amount": 50,
-      "payment_method": "card"
+      "amount": 50,
+      "method": "card"
     }
   },
   {
@@ -147,8 +147,8 @@
       "payment_day": "2024-09-02",
       "course_pay": 12,
       "lesson_pay": 4,
-      "payment_amount": 30,
-      "payment_method": "cash"
+      "amount": 30,
+      "method": "cash"
     }
   }
 ]

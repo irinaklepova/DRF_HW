@@ -34,12 +34,12 @@ class Payment(models.Model):
     payment_day = models.DateField(**NULLABLE, verbose_name='Дата оплаты')
     course_pay = models.ForeignKey(Course, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Оплаченный курс')
     lesson_pay = models.ForeignKey(Lesson, on_delete=models.SET_NULL, **NULLABLE, verbose_name='Оплаченный урок')
-    payment_amount = models.PositiveIntegerField(verbose_name='Сумма оплаты')
-    payment_method = models.CharField(max_length=25, choices=PAYMENT_METHOD_CHOICES, **NULLABLE,
+    amount = models.PositiveIntegerField(verbose_name='Сумма оплаты')
+    method = models.CharField(max_length=25, choices=PAYMENT_METHOD_CHOICES, **NULLABLE,
                                       verbose_name='Способ оплаты')
 
     def __str__(self):
-        return (f'{self.user}: {self.payment_day}, {self.payment_amount}, '
+        return (f'{self.user}: {self.payment_day}, {self.amount}, '
                 f'{self.course_pay if self.course_pay else self.lesson_pay}')
 
     class Meta:
