@@ -88,7 +88,7 @@
       "course_pay": 11,
       "lesson_pay": null,
       "payment_amount": 150,
-      "payment_method": "наличные"
+      "payment_method": "cash"
     }
   },
   {
@@ -100,7 +100,7 @@
       "course_pay": 11,
       "lesson_pay": 2,
       "payment_amount": 30,
-      "payment_method": "перевод на счет"
+      "payment_method": "card"
     }
   },
   {
@@ -112,7 +112,7 @@
       "course_pay": 13,
       "lesson_pay": 5,
       "payment_amount": 50,
-      "payment_method": "перевод на счет"
+      "payment_method": "cash"
     }
   },
   {
@@ -131,7 +131,7 @@
     "model": "users.payment",
     "pk": 5,
     "fields": {
-      "user": 8,
+      "user": 7,
       "payment_day": "2024-03-01",
       "course_pay": 13,
       "lesson_pay": 5,
@@ -143,7 +143,7 @@
     "model": "users.payment",
     "pk": 6,
     "fields": {
-      "user": 6,
+      "user": 7,
       "payment_day": "2024-09-02",
       "course_pay": 12,
       "lesson_pay": 4,
