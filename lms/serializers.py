@@ -17,7 +17,7 @@ class CourseSerializer(serializers.ModelSerializer):
     lessons = LessonSerializer(source='lesson', many=True, read_only=True)
 
     def get_lessons_count(self, obj):
-        return obj.lesson.all().count()
+        return obj.lesson.count()
 
     class Meta:
         model = Course
