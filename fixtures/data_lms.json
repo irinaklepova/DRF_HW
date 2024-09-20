@@ -1,0 +1,73 @@
+[
+  {
+    "model": "lms.course",
+    "pk": 11,
+    "fields": {
+      "name": "Python для начинающих",
+      "description": "Отличный курс для начинающих",
+      "preview": ""
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 12,
+    "fields": {
+      "name": "Python для опытных",
+      "description": "Отличный курс для тех, кто хочет расширить свои навыки",
+      "preview": ""
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 13,
+    "fields": {
+      "name": "Web-разработка",
+      "description": "Курс для тех, кто хочет прокачать навыки работы с css, js",
+      "preview": ""
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 2,
+    "fields": {
+      "name_les": "Как создавать списки",
+      "description_les": "работа с циклами",
+      "preview_les": "",
+      "video_link": null,
+      "course": 11
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 3,
+    "fields": {
+      "name_les": "Работа со списками",
+      "description_les": "методы списков",
+      "preview_les": "",
+      "video_link": null,
+      "course": 11
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 4,
+    "fields": {
+      "name_les": "FBV и CBV",
+      "description_les": "спсобы описания контроллеров по FBV и CBV",
+      "preview_les": "",
+      "video_link": null,
+      "course": 12
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 5,
+    "fields": {
+      "name_les": "Работа с js",
+      "description_les": "способы описания чего-нибудь",
+      "preview_les": "",
+      "video_link": null,
+      "course": 13
+    }
+  }
+]
