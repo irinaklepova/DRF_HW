@@ -17,4 +17,10 @@ class UserSerializer(ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'email', 'phone', 'city', 'avatar')
+        fields = ('id', 'email', 'phone', 'city', 'avatar',)
+
+
+class OtherUserSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        exclude = ['password', 'last_name', 'payment_history']
