@@ -4,18 +4,20 @@
     "pk": 5,
     "fields": {
       "password": "pbkdf2_sha256$870000$icUsnyDeX7wW1jR7XYtEXy$P+w+HLXg+HJDu+vIaBkRwV/XnYlkB1ZVr9zexOkg/jY=",
-      "last_login": null,
+      "last_login": "2024-09-21T20:30:40Z",
       "is_superuser": true,
       "first_name": "admin",
       "last_name": "admin",
       "is_staff": true,
       "is_active": true,
-      "date_joined": "2024-09-20T07:53:28.612Z",
+      "date_joined": "2024-09-20T07:53:28Z",
       "email": "ivklepova2307@gmail.com",
       "phone": null,
       "city": null,
       "avatar": "",
-      "groups": [],
+      "groups": [
+        3
+      ],
       "user_permissions": []
     }
   },
@@ -23,19 +25,21 @@
     "model": "users.user",
     "pk": 6,
     "fields": {
-      "password": "",
+      "password": "123qwe456",
       "last_login": null,
       "is_superuser": false,
       "first_name": "",
       "last_name": "",
       "is_staff": false,
       "is_active": true,
-      "date_joined": "2024-09-20T08:03:50.472Z",
+      "date_joined": "2024-09-20T08:03:50Z",
       "email": "test1@mail.ru",
       "phone": null,
       "city": "Москва",
       "avatar": "",
-      "groups": [],
+      "groups": [
+        2
+      ],
       "user_permissions": []
     }
   },
@@ -43,19 +47,21 @@
     "model": "users.user",
     "pk": 7,
     "fields": {
-      "password": "",
+      "password": "123qwe456",
       "last_login": null,
       "is_superuser": false,
       "first_name": "",
       "last_name": "",
       "is_staff": false,
       "is_active": true,
-      "date_joined": "2024-09-20T08:03:50.472Z",
+      "date_joined": "2024-09-20T08:03:50Z",
       "email": "test2@mail.ru",
       "phone": null,
       "city": "Саратов",
       "avatar": "",
-      "groups": [],
+      "groups": [
+        2
+      ],
       "user_permissions": []
     }
   },
@@ -63,17 +69,61 @@
     "model": "users.user",
     "pk": 8,
     "fields": {
-      "password": "",
+      "password": "123qwe456",
       "last_login": null,
       "is_superuser": false,
       "first_name": "",
       "last_name": "",
       "is_staff": false,
       "is_active": true,
-      "date_joined": "2024-09-20T08:03:50.472Z",
+      "date_joined": "2024-09-20T08:03:50Z",
       "email": "test3@mail.ru",
       "phone": null,
       "city": "Самара",
+      "avatar": "",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$lfjCRGZugVOh4ILP55VPbY$wNXoONr8NlAtX7Fs55ISYD7FPBHIED+N8WV1JQS6eFc=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-09-20T19:04:08Z",
+      "email": "test4@mail.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$VV4k8YJM4rl6k4b3DH7tjo$ZW55ie7aCgOheYObMfxV9XRR5ObtkdG1q8xdM+GwmnE=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-22T13:58:35.545Z",
+      "email": "test5@mail.ru",
+      "phone": null,
+      "city": null,
       "avatar": "",
       "groups": [],
       "user_permissions": []
