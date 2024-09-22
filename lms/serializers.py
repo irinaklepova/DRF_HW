@@ -17,11 +17,19 @@ class CourseSerializer(serializers.ModelSerializer):
     """Сериализатор для курсов"""
     lessons_count = serializers.SerializerMethodField()
     lessons = LessonSerializer(source='lesson', many=True, read_only=True)
+    is_subscribed = serializers.SerializerMethodField()
+
+    def get_is_subscribed(self, obj):
+        request = self.context.get('request')
+        user = None
+        if request:
+            user = request.user
+        return obj.course_subscription.filter(user=user).exists()
 
     def get_lessons_count(self, obj):
         return obj.lesson.count()
 
     class Meta:
         model = Course
-        fields = ['id', 'name', 'description', 'preview', 'lessons_count', 'lessons']
+        fields = ['id', 'name', 'description', 'preview', 'lessons_count', 'lessons', 'is_subscribed']
         validators = [UrlValidator(field='url')]
