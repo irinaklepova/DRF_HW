@@ -5,6 +5,7 @@ from config.settings import NULLABLE
 
 
 class Course(models.Model):
+    """Модель курса"""
     name = models.CharField(max_length=200, verbose_name='Название')
     description = models.TextField(**NULLABLE, verbose_name='Описание')
     preview = models.ImageField(upload_to='lms/', **NULLABLE, verbose_name='Превью')
@@ -21,6 +22,7 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
+    """Модель урока"""
     name_les = models.CharField(max_length=200, verbose_name='Название урока')
     description_les = models.TextField(**NULLABLE, verbose_name='Описание урока')
     preview_les = models.ImageField(upload_to='lms/', **NULLABLE, verbose_name='Превью урока')
@@ -36,3 +38,19 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = 'Урок'
         verbose_name_plural = 'Уроки'
+
+
+class Subscription(models.Model):
+    """Модель подписки пользователя на курс"""
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, **NULLABLE,
+                             related_name='course_subscription', verbose_name='Подписчик')
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, **NULLABLE, related_name='course_subscription',
+                               verbose_name='Курс')
+
+    def __str__(self):
+        return f'{self.course} - {self.user}'
+
+    class Meta:
+        verbose_name = 'Подписка'
+        verbose_name_plural = 'Подписки'
