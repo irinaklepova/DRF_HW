@@ -23,4 +23,4 @@ class UserSerializer(ModelSerializer):
 class OtherUserSerializer(ModelSerializer):
     class Meta:
         model = User
-        exclude = ['password', 'last_name', 'payment_history']
+        exclude = ['password', 'last_name']
