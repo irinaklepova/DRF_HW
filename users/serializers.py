@@ -21,6 +21,7 @@ class UserSerializer(ModelSerializer):
 
 
 class OtherUserSerializer(ModelSerializer):
+    """Сериализатор для пользователя, не являющегося владельцем"""
     class Meta:
         model = User
         exclude = ['password', 'last_name']
