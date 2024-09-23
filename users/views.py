@@ -10,7 +10,7 @@ from users.serializers import UserSerializer, PaymentSerializer, OtherUserSerial
 
 
 class PaymentViewSet(viewsets.ModelViewSet):
-    """ViewSet для модели пользователя"""
+    """ViewSet для модели платежа"""
     serializer_class = PaymentSerializer
     queryset = Payment.objects.all()
     permission_classes = (IsAuthenticated,)
@@ -21,6 +21,7 @@ class PaymentViewSet(viewsets.ModelViewSet):
 
 
 class UsersCreateAPIView(CreateAPIView):
+    """Generic-класс для создания пользователя"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
 
@@ -31,12 +32,14 @@ class UsersCreateAPIView(CreateAPIView):
 
 
 class UserListView(ListAPIView):
+    """Generic-класс для вывода списка пользователей"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (IsAuthenticated,)
 
 
 class UserDetailPIView(RetrieveAPIView):
+    """Generic-класс для просмотра одного пользователя"""
     # serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (IsAuthenticated,)
@@ -50,11 +53,13 @@ class UserDetailPIView(RetrieveAPIView):
 
 
 class UserUpdateAPIView(UpdateAPIView):
+    """Generic-класс для редактирования пользователя"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (IsAuthenticated, IsOwner)
 
 
 class UserDeleteAPIView(DestroyAPIView):
+    """Generic-класс для удаления пользователя"""
     queryset = User.objects.all()
     permission_classes = (IsAuthenticated, IsOwner, ~IsStaff,)
