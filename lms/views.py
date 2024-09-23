@@ -33,6 +33,7 @@ class CourseViewSet(viewsets.ModelViewSet):
 
 
 class LessonCreateAPIView(generics.CreateAPIView):
+    """Generic-класс для создания урока"""
     serializer_class = LessonSerializer
     permission_classes = (IsAuthenticated, ~IsStaff,)
 
@@ -43,6 +44,7 @@ class LessonCreateAPIView(generics.CreateAPIView):
 
 
 class LessonListAPIView(generics.ListAPIView):
+    """Generic-класс для просмотра уроков."""
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     permission_classes = (IsAuthenticated, IsStaff | IsOwner,)
@@ -50,23 +52,27 @@ class LessonListAPIView(generics.ListAPIView):
 
 
 class LessonRetrieveAPIView(generics.RetrieveAPIView):
+    """Generic-класс для просмотра урока"""
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     permission_classes = (IsAuthenticated, IsStaff | IsOwner,)
 
 
 class LessonUpdateAPIView(generics.UpdateAPIView):
+    """Generic-класс для редактирования урока"""
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     permission_classes = (IsAuthenticated, IsStaff | IsOwner,)
 
 
 class LessonDestroyAPIView(generics.DestroyAPIView):
+    """Generic-класс для удаления урока"""
     queryset = Lesson.objects.all()
     permission_classes = (IsAuthenticated, ~IsStaff | IsOwner,)
 
 
 class SubscriptionAPIView(APIView):
+    """Класс для добавления и удаления подписки на курс"""
     permission_classes = (IsAuthenticated,)
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
