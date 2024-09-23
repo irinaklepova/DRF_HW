@@ -1,6 +1,6 @@
 from rest_framework.test import APITestCase
 from django.urls import reverse
-from lms.models import Course, Lesson
+from lms.models import Course, Lesson, Subscription
 from users.models import User
 from rest_framework import status
 from django.contrib.auth.models import Group
@@ -98,3 +98,27 @@ class LessonModeratorTestCase(APITestCase):
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
         self.assertEqual(Lesson.objects.all().count(), 1)
+
+
+class SubscriptionTestCase(APITestCase):
+    """Тест для модели подписки"""
+
+    def setUp(self):
+        self.user = User.objects.create(email='test@test.ru')
+        self.course = Course.objects.create(name='Test сourse', owner=self.user)
+        self.client.force_authenticate(user=self.user)
+
+    def test_subscription(self):
+        """Тест добавления и удаления подписки на курс"""
+        url = reverse('lms:subscription')
+        data = {'course': self.course.pk}
+
+        response1 = self.client.post(url, data)
+        self.assertEqual(response1.status_code, status.HTTP_200_OK)
+        self.assertEqual(response1.json(), {'message': 'Подписка добавлена'})
+        self.assertEqual(Subscription.objects.all().count(), 1)
+
+        response2 = self.client.post(url, data)
+        self.assertEqual(response2.status_code, status.HTTP_200_OK)
+        self.assertEqual(response2.json(), {'message': 'Подписка удалена'})
+        self.assertEqual(Subscription.objects.all().count(), 0)
