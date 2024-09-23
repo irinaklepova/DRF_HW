@@ -3,6 +3,7 @@ from django.urls import reverse
 from lms.models import Course, Lesson
 from users.models import User
 from rest_framework import status
+from django.contrib.auth.models import Group
 
 
 class LessonTestCase(APITestCase):
@@ -71,3 +72,29 @@ class LessonTestCase(APITestCase):
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Lesson.objects.all().count(), 0)
+
+
+class LessonModeratorTestCase(APITestCase):
+    """Тест для модели урока с пользователем модератор"""
+
+    def setUp(self):
+        self.user = User.objects.create(email='moderator@test.ru', is_staff=True)
+        self.my_group = Group.objects.create(name='moderator')
+        self.user.groups.add(self.my_group)
+        self.lesson = Lesson.objects.create(name_les='Test lesson')
+        self.client.force_authenticate(user=self.user)
+
+    def test_lesson_create_moderator(self):
+        """Тест создания урока модератором"""
+        url = reverse('lms:lesson_create')
+        data = {'name_les': 'Test lesson 2'}
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEqual(Lesson.objects.all().count(), 1)
+
+    def test_lesson_delete_moderator(self):
+        """Тест удаления урока модератором"""
+        url = reverse('lms:lesson_delete', args=(self.lesson.pk,))
+        response = self.client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEqual(Lesson.objects.all().count(), 1)
