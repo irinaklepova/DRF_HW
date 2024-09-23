@@ -17,7 +17,6 @@ urlpatterns = [
                   path('users/<int:pk>/', UserDetailPIView.as_view(), name='users_detail'),
                   path('users/update/<int:pk>/', UserUpdateAPIView.as_view(), name='users_update'),
                   path('users/delete/<int:pk>/', UserDeleteAPIView.as_view(), name='users_delete'),
-
                   path('token/', TokenObtainPairView.as_view(), name='token'),
                   path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
               ] + router.urls
