@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, generics
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -8,10 +8,6 @@ from lms.models import Course, Lesson, Subscription
 from lms.paginators import CoursePagination, LessonPagination
 from users.permissions import IsOwner, IsStaff
 from lms.serializers import CourseSerializer, LessonSerializer
-
-
-class IsModer:
-    pass
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -27,11 +23,11 @@ class CourseViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.action == 'create':
-            self.permission_classes = (~IsStaff,)
+            self.permission_classes = (IsAuthenticated, ~IsStaff,)
         elif self.action in ['update', 'retrieve']:
-            self.permission_classes = (IsStaff | IsOwner,)
+            self.permission_classes = (IsAuthenticated, IsStaff | IsOwner,)
         elif self.action == 'destroy':
-            self.permission_classes = (~IsStaff, IsOwner,)
+            self.permission_classes = (IsAuthenticated, ~IsStaff, IsOwner,)
 
         return super().get_permissions()
 
