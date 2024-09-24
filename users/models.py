@@ -37,6 +37,9 @@ class Payment(models.Model):
     amount = models.PositiveIntegerField(verbose_name='Сумма оплаты')
     method = models.CharField(max_length=25, choices=PAYMENT_METHOD_CHOICES, **NULLABLE,
                                       verbose_name='Способ оплаты')
+    session_id = models.CharField(max_length=255, **NULLABLE, help_text='Укажите ID сессии', verbose_name='ID сессии')
+    link = models.URLField(max_length=400, **NULLABLE, help_text='Укажите ссылку на оплату',
+                           verbose_name='Ссылка на оплату')
 
     def __str__(self):
         return (f'{self.user}: {self.payment_day}, {self.amount}, '
