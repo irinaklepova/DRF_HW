@@ -7,6 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from users.permissions import IsOwner, IsStaff
 from users.models import User, Payment
 from users.serializers import UserSerializer, PaymentSerializer, OtherUserSerializer
+from users.services import create_stripe_product, create_stripe_price, create_stripe_session
 
 
 class PaymentViewSet(viewsets.ModelViewSet):
@@ -18,6 +19,15 @@ class PaymentViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_fields = ('course_pay', 'lesson_pay', 'method',)
     ordering_fields = ('payment_day',)
+
+    def perform_create(self, serializer):
+        payment = serializer.save(user=self.request.user)
+        product_id = create_stripe_product(payment)
+        price = create_stripe_price(payment.amount, product_id)
+        session_id, payment_link = create_stripe_session(price)
+        payment.session_id = session_id
+        payment.link = payment_link
+        payment.save()
 
 
 class UsersCreateAPIView(CreateAPIView):
