@@ -164,3 +164,4 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 STRIPE_KEYS = os.getenv('STRIPE_KEYS')
+
