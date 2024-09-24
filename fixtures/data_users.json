@@ -120,8 +120,72 @@
       "last_name": "",
       "is_staff": false,
       "is_active": true,
-      "date_joined": "2024-09-22T13:58:35.545Z",
+      "date_joined": "2024-09-22T13:58:35Z",
       "email": "test5@mail.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$8a8K3Sic7b9XzJ0PNbaKL4$WNvWhX3gnaKQb7I7B9B1n8O0R+/weyy5a2sJ+fzDsb0=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-22T18:20:49Z",
+      "email": "test6@mail.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$WF6LPFZ1iUeomsaQgeeRdu$zuWaApycfv/x29bWUpVxAMCL6/7xLRgMcFTybpcLe0c=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-24T07:56:20.678Z",
+      "email": "test7@mail.ru",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$70z5o5rzVMIKZF633IAb0C$xXe05rdQBYDY6LFDnK6rMTOXqwxrejTVm2oUsrtAW+o=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-09-24T07:59:07.738Z",
+      "email": "test8@mail.ru",
       "phone": null,
       "city": null,
       "avatar": "",
@@ -138,7 +202,9 @@
       "course_pay": 11,
       "lesson_pay": null,
       "amount": 150,
-      "method": "cash"
+      "method": "cash",
+      "session_id": null,
+      "link": null
     }
   },
   {
@@ -150,7 +216,9 @@
       "course_pay": 11,
       "lesson_pay": 2,
       "amount": 30,
-      "method": "card"
+      "method": "card",
+      "session_id": null,
+      "link": null
     }
   },
   {
@@ -162,7 +230,9 @@
       "course_pay": 13,
       "lesson_pay": 5,
       "amount": 50,
-      "method": "cash"
+      "method": "cash",
+      "session_id": null,
+      "link": null
     }
   },
   {
@@ -174,7 +244,9 @@
       "course_pay": 12,
       "lesson_pay": null,
       "amount": 100,
-      "method": "card"
+      "method": "card",
+      "session_id": null,
+      "link": null
     }
   },
   {
@@ -186,7 +258,9 @@
       "course_pay": 13,
       "lesson_pay": 5,
       "amount": 50,
-      "method": "card"
+      "method": "card",
+      "session_id": null,
+      "link": null
     }
   },
   {
@@ -198,7 +272,9 @@
       "course_pay": 12,
       "lesson_pay": 4,
       "amount": 30,
-      "method": "cash"
+      "method": "cash",
+      "session_id": null,
+      "link": null
     }
   }
 ]
