@@ -1,9 +1,10 @@
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets, generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
+from lms.tasks import send_message #subscription_message,
 from lms.models import Course, Lesson, Subscription
 from lms.paginators import CoursePagination, LessonPagination
 from users.permissions import IsOwner, IsStaff
@@ -30,6 +31,19 @@ class CourseViewSet(viewsets.ModelViewSet):
             self.permission_classes = (IsAuthenticated, ~IsStaff | IsOwner,)
 
         return super().get_permissions()
+
+    def perform_update(self, serializer):
+        course = serializer.save()
+        subscription = Subscription.objects.filter(course=course)
+        if subscription:
+            subscription_email = []
+            for subscript in subscription:
+                subscription_email.append(subscript.user.email)
+                print(subscript.user.email)
+                print(subscription_email)
+            send_message.delay(subscription_email)
+
+        course.save()
 
 
 class LessonCreateAPIView(generics.CreateAPIView):
@@ -77,6 +91,7 @@ class SubscriptionAPIView(APIView):
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
 
+    @swagger_auto_schema(request_body=SubscriptionSerializer)
     def post(self, *args, **kwargs):
         user = self.request.user
         course_id = self.request.data.get('course')
