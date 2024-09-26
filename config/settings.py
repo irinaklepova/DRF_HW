@@ -198,7 +198,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 CELERY_BEAT_SCHEDULE = {
     'block_user': {
-        'task': 'lms.tasks.block_user',
+        'task': 'users.tasks.block_user',
         'schedule': timedelta(seconds=10),
     },
 }
