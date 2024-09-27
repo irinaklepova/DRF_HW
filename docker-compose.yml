@@ -3,7 +3,7 @@ version: "3"
 services:
 
   db:
-    image: postgres:16-alpine
+    image: postgres
     restart: on-failure
     env_file:
       - .env
